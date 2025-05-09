@@ -77,11 +77,13 @@ z-index: -1;
 <div class="timeline-dot bg-green-500"></div>
 <div class="timeline-line bg-green-500"></div>
 </div>
+<a href="https://bit.ly/MaioEstudo" data-readdy="true">
 <div class="bg-yellow-50 rounded p-3 flex-1 shadow-sm">
 <h3 class="text-sm font-bold">Estudo contextual</h3>
 <p class="text-xs my-1">Levantamento histórico e cultural sobre a maionese e sua relevância para Leopoldina e região.</p>
 <p class="text-[10px] text-green-500">Status: Concluído ✓</p>
 </div>
+</a>
 </div>
 <!-- Timeline Item 2 -->
 <div class="flex mb-6 relative">
@@ -89,11 +91,13 @@ z-index: -1;
 <div class="timeline-dot bg-green-500"></div>
 <div class="timeline-line bg-green-500"></div>
 </div>
+<a href="https://bit.ly/MaioJustificativa" data-readdy="true">
 <div class="bg-yellow-50 rounded p-3 flex-1 shadow-sm">
 <h3 class="text-sm font-bold">Justificativa do Projeto</h3>
 <p class="text-xs my-1">Elaboração do documento fundamentando a importância econômica, cultural e social da iniciativa.</p>
 <p class="text-[10px] text-green-500">Status: Concluído ✓</p>
 </div>
+</a>
 </div>
 <!-- Timeline Item 3 -->
 <div class="flex mb-6 relative">
@@ -284,54 +288,9 @@ document.body.removeChild(toast);
 });
 document.addEventListener('DOMContentLoaded', function() {
 const signButton = document.querySelector('.bg-white.text-primary.font-bold');
-signButton.addEventListener('click', function() {
-const modal = document.createElement('div');
-modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
-modal.innerHTML = `
-<div class="bg-white rounded-lg w-[320px] p-4">
-<h3 class="font-bold text-lg mb-3 text-primary">Assinar Abaixo-Assinado</h3>
-<form>
-<div class="mb-3">
-<label class="block text-sm font-medium mb-1">Nome Completo</label>
-<input type="text" class="w-full border rounded px-3 py-2 text-sm" placeholder="Digite seu nome completo" required>
-</div>
-<div class="mb-3">
-<label class="block text-sm font-medium mb-1">E-mail</label>
-<input type="email" class="w-full border rounded px-3 py-2 text-sm" placeholder="seu@email.com" required>
-</div>
-<div class="mb-3">
-<label class="block text-sm font-medium mb-1">CPF</label>
-<input type="text" class="w-full border rounded px-3 py-2 text-sm" placeholder="000.000.000-00" required>
-</div>
-<div class="mb-4">
-<label class="flex items-start text-sm">
-<input type="checkbox" class="mt-1 mr-2" required>
-<span>Concordo com os termos de uso e política de privacidade do movimento</span>
-</label>
-</div>
-<div class="flex justify-between">
-<button type="button" class="bg-gray-200 px-4 py-2 rounded-button text-sm font-medium" id="closeSignModal">Cancelar</button>
-<button type="submit" class="bg-primary text-white px-4 py-2 rounded-button text-sm font-medium">Assinar Agora</button>
-</div>
-</form>
-</div>
-`;
-document.body.appendChild(modal);
-document.getElementById('closeSignModal').addEventListener('click', function() {
-document.body.removeChild(modal);
-});
-modal.querySelector('form').addEventListener('submit', function(e) {
-e.preventDefault();
-document.body.removeChild(modal);
-const successToast = document.createElement('div');
-successToast.className = 'fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded text-sm';
-successToast.textContent = 'Assinatura registrada com sucesso! Obrigado pelo seu apoio.';
-document.body.appendChild(successToast);
-setTimeout(() => {
-document.body.removeChild(successToast);
-}, 4000);
-});
-});
+if (signButton) {
+signButton.removeEventListener('click', function() {});
+}
 });
 </script>
 </body>
